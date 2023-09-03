@@ -1,0 +1,43 @@
+.menu {
+  width: 100%;
+}
+
+.ant-layout-content > div {
+  min-height: calc(100vh - 130px);
+}
+
+.ant-layout-header {
+  line-height: normal;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.list-team {
+  .ant-col {
+    height: 100%;
+    padding-bottom: 25px;
+  }
+}
+
+.header-menu {
+  background-color: rgb(203, 123, 19);
+  .ant-menu {
+    background-color: rgb(203, 123, 19);
+    margin-left: 50px;
+
+    .ant-menu-item-selected {
+      background-color: rgb(203, 123, 19);
+      &:hover {
+        background-color: rgb(203, 123, 19);
+      }
+    }
+  }
+}
+
+.search-field {
+  width: 300px;
+  input {
+    height: 44px;
+  }
+}
