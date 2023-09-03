@@ -103,7 +103,8 @@ function PlayerStatPage() {
               title='Retour'
               onClick={() => {
                 if (returnUrl === 'players') {
-                  window.location.href = '/players';
+                  //window.location.href = '/players';
+                  navigate('/players');
                 } else {
                   if (returnUrl === 'stats') {
                     navigate('/stats');

@@ -10,7 +10,8 @@ function AppLayout() {
 
   const navigateRoute = (e) => {
     if (e.key === '/players') {
-      window.location.href = '/players';
+      //window.location.href = '/players';
+      navigate(e.key);
     } else {
       navigate(e.key);
     }
@@ -65,7 +66,7 @@ function AppLayout() {
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2023 Created by Ant UED
+        NBA Reference ©2023 Design by Mouhamed Lamine TALL
       </Footer>
     </Layout>
   );

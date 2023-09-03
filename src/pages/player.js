@@ -1,19 +1,30 @@
 import { SearchOutlined } from '@ant-design/icons';
 import { Card, Input, List, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getEntities } from '../redux/player.reducer';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function PlayerPage() {
-  const entities = useSelector((state) => state.player.entities);
+  //const entities = useSelector((state) => state.player.entities);
+  const [entities, setEntities] = useState([]);
+
   const [filter, setFilter] = useState('');
-  const loading = useSelector((state) => state.player.loading);
-  const dispatch = useDispatch();
+  //const loading = useSelector((state) => state.player.loading);
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
   useEffect(() => {
-    dispatch(getEntities(filter));
-  }, [dispatch, filter]);
+    setLoading(true);
+    const params = new URLSearchParams({
+      filter,
+    });
+    axios
+      .get(`/api/players?${params}`)
+      .then(({ data }) => {
+        setEntities(data);
+      })
+      .finally(() => setLoading(false));
+  }, [filter]);
 
   const getSeasonInterval = (seasons) => {
     const values = [...seasons];
