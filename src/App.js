@@ -20,7 +20,7 @@ const PlayerPage = lazy(() => import('./pages/player'));
 
 const TIMEOUT = 1 * 60 * 1000;
 axios.defaults.timeout = TIMEOUT;
-axios.defaults.baseURL = 'http://localhost:3400';
+axios.defaults.baseURL = 'https://nba-reference-api.onrender.com';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
